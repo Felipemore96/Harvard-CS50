@@ -1,4 +1,4 @@
-const { LinkedList } = require("./linked_list");
+const { LinkedList } = require("./linkedList");
 
 function MergeSort(linkedList) {
   // Sorts a linked lisk in ascending order
