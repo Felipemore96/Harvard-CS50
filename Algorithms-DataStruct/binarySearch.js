@@ -1,7 +1,8 @@
+const sortedNames = require("./quickSortStrings");
+
 function binarySearch(array, target) {
   first = 0;
   last = array.length - 1;
-  console.log(first, last);
 
   while (first <= last) {
     midpoint = Math.floor((first + last) / 2);
@@ -27,7 +28,10 @@ function verify(index) {
   }
 }
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-result = binarySearch(numbers, 6);
+// result = binarySearch(numbers, 6);
+// verify(result);
+
+result = binarySearch(sortedNames, "Laura Morris");
 verify(result);

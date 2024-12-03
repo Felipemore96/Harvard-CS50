@@ -10,7 +10,7 @@ function QuickSortStrings(array) {
   let bigger = [];
 
   for (let i = 1; i < array.length; i++) {
-    if (array[i].localeCompare(pivot) <= 0) {
+    if (array[i] <= pivot) {
       smaller.push(array[i]);
     } else {
       bigger.push(array[i]);
@@ -20,6 +20,8 @@ function QuickSortStrings(array) {
   return [...QuickSortStrings(smaller), pivot, ...QuickSortStrings(bigger)];
 }
 
-console.log("Unsorted Names: ", names);
+// console.log("Unsorted Names: ", names);
 const sorted = QuickSortStrings(names);
-console.log("Sorted: ", sorted);
+// console.log("Sorted: ", sorted);
+
+module.exports = sorted;
