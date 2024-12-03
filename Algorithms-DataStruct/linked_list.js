@@ -10,6 +10,16 @@ class LinkedList {
     this.head = null; // Start of the list
   }
 
+  size() {
+    let count = 0;
+    let current = this.head;
+    while (current) {
+      count++;
+      current = current.next;
+    }
+    return count;
+  }
+
   // Add a node to the end of the list
   append(data) {
     const newNode = new Node(data);
@@ -98,6 +108,22 @@ class LinkedList {
     }
   }
 
+  nodeAtIndex(index) {
+    if (index === 0) {
+      return this.head;
+    } else {
+      let current = this.head;
+      let position = 0;
+
+      while (position < index) {
+        current = current.next;
+        position += 1;
+      }
+
+      return current;
+    }
+  }
+
   // Print the list
   print() {
     let current = this.head;
@@ -109,6 +135,8 @@ class LinkedList {
     console.log(result);
   }
 }
+
+module.exports = { LinkedList };
 
 // Example Usage
 const list = new LinkedList();
