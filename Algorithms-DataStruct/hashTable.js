@@ -85,3 +85,44 @@ function groupPalindromes(list) {
 let words2 = ["level", "radar", "world", "deified", "hello", "civic", "java"];
 const groupedAnagrams = groupPalindromes(words2);
 console.log(groupedAnagrams);
+
+var canConstruct = function (ransomNote, magazine) {
+  // Define hash table called frequency map
+  const frequencyMap = {};
+
+  // No need to organize letters
+
+  for (let letter of magazine) {
+    frequencyMap[letter] = (frequencyMap[letter] || 0) + 1;
+  }
+
+  // Create for loop, what goes through each letter of ramsonNote
+  for (let letter of ransomNote) {
+    if (!frequencyMap[letter] || frequencyMap[letter] === 0) {
+      return false;
+    }
+    frequencyMap[letter]--;
+  }
+
+  return true;
+};
+
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+
+  const frequencyMap = {};
+
+  for (let letter of s) {
+    frequencyMap[letter] = (frequencyMap[letter] || 0) + 1;
+  }
+
+  for (let letter of t) {
+    if (!frequencyMap[letter] || frequencyMap[letter] === 0) {
+      return false;
+    }
+
+    frequencyMap[letter]--;
+  }
+
+  return true;
+};
