@@ -44,6 +44,22 @@ function anagramGrouping(list) {
   return Object.values(groups);
 }
 
+var groupAnagrams = function (strs) {
+  let anagrams = {};
+
+  for (let word of strs) {
+    const sorted = word.split("").sort().join("");
+
+    if (!anagrams[sorted]) {
+      anagrams[sorted] = [];
+    }
+
+    anagrams[sorted].push(word);
+  }
+
+  return Object.values(anagrams);
+};
+
 // let textExample = "Hola soy felipe";
 // let count = bigramFrequencyCounter(textExample);
 // console.log(count);
